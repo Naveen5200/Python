@@ -1,0 +1,73 @@
+<style>
+    #abc{
+        text-align: center;
+        align-items: center;
+    }
+    h3 {
+        color: red;
+    }
+
+    h4 {
+        color: green;
+    }
+
+    button {
+        background-color: yellowgreen;
+    }
+
+    .submit {
+        background-color: #4CAF50;
+        border: 5px;
+        border-radius: 8px;
+        color: white;
+        padding:5px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    input{
+        width:500px;
+    }
+    .btn{
+        background-color: #4CAF50;
+        border: 5px;
+        border-radius: 8px;
+        color: white;
+        padding:5px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;width:500px;
+    }
+</style>
+<div id="abc">
+<h1>Login Now</h1>
+{% for mesaage in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+<form action="login" method="POST">
+    {% csrf_token %}
+    <p>Usrename:</p>
+    <input type="text" name="username" />
+    <p>Password:</p>
+    <input type="password" name="password" />
+    <br />
+    <br />
+    <input class="submit" type="submit" />
+    <br />
+
+    <h4>If not registerd earlier? Click on Register here</h4>
+    <a href="create">
+        <button class="btn">
+            Register here
+        </button>
+    </a>
+
+
+</form>
+</div>
